@@ -1,0 +1,602 @@
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263238;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --primary: #087f5b;
+    --primary-dark: #056044;
+    --secondary: #f4b942;
+    --dark: #172b24;
+    --text: #52605a;
+    --light: #f4f8f6;
+    --white: #ffffff;
+    --border: #dce7e2;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #e8efec;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar a {
+    padding: 10px 16px;
+    color: #45534d;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary);
+    background: #edf7f3;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(8, 45, 34, 0.62), rgba(8, 45, 34, 0.55)),
+        url("../images/banner.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 80px 0;
+}
+
+.hero-subtitle,
+.section-label {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #bcebdc;
+}
+
+.hero-description {
+    max-width: 570px;
+    font-size: 18px;
+    color: #f1f7f4;
+    margin-bottom: 32px;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    color: var(--primary);
+    background: white;
+    border-color: white;
+}
+
+.btn-light:hover {
+    color: white;
+    background: transparent;
+}
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--dark);
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.heading-line {
+    width: 55px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.center .heading-line {
+    margin: 0 auto;
+}
+
+/* ---------- INTRO ---------- */
+
+.intro {
+    background: var(--white);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.intro-text p {
+    margin-bottom: 18px;
+    color: var(--text);
+}
+
+.intro-text strong {
+    color: var(--primary);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.text-link:hover {
+    color: var(--primary-dark);
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 28px 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #a9d8c8;
+    box-shadow: 0 12px 30px rgba(22, 70, 54, 0.08);
+}
+
+.feature-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    color: var(--dark);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.feature-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* ---------- DESTINATION PREVIEW ---------- */
+
+.destinations-preview {
+    background: var(--light);
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.destination-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(27, 61, 49, 0.07);
+}
+
+.destination-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content>span {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.card-content h3 {
+    color: var(--dark);
+    font-size: 25px;
+    margin: 5px 0 8px;
+}
+
+.card-content p {
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card-content a {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* ---------- CTA ---------- */
+
+.cta-section {
+    background:
+        linear-gradient(rgba(5, 72, 52, 0.92), rgba(5, 72, 52, 0.92)),
+        url("../images/banner.jpg") center/cover;
+    color: white;
+    text-align: center;
+    padding: 90px 0;
+}
+
+.cta-content h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin-bottom: 12px;
+}
+
+.cta-content>p:not(.section-label) {
+    color: #dcefe8;
+    margin-bottom: 28px;
+}
+
+/* ---------- PAGE BANNER ---------- */
+.page-banner {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.page-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 47, 36, 0.68);
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.destinations-banner {
+    background-image: url("../images/destinations-banner.jpg");
+}
+
+.food-banner {
+    background-image: url("../images/food-banner.jpg");
+}
+
+.contact-banner {
+    background-image: url("../images/contact-banner.jpg");
+}
+
+.page-banner h1 {
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.page-banner p:not(.hero-subtitle) {
+    max-width: 600px;
+    font-size: 17px;
+    color: #edf7f3;
+}
+
+/* ---------- DESTINATIONS PAGE ---------- */
+
+.destination-list {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.destination-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.destination-large.reverse .destination-image {
+    order: 2;
+}
+
+.destination-large.reverse .destination-info {
+    order: 1;
+}
+
+.destination-image {
+    min-height: 410px;
+}
+
+.destination-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.region,
+.food-region {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.destination-info h2 {
+    color: var(--dark);
+    font-size: 36px;
+    margin: 5px 0 15px;
+}
+
+.destination-info p {
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.destination-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.destination-tags span {
+    background: #edf7f3;
+    color: var(--primary-dark);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.quote-section {
+    padding: 90px 0;
+    text-align: center;
+    background: var(--light);
+}
+
+.quote-section blockquote {
+    max-width: 750px;
+    margin: 0 auto 15px;
+    color: var(--dark);
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.quote-section p {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ---------- FOOD PAGE ---------- */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.food-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(27, 61, 49, 0.09);
+}
+
+.food-card img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.food-content {
+    padding: 23px;
+}
+
+.food-content h3 {
+    color: var(--dark);
+    font-size: 24px;
+    margin: 4px 0 8px;
+}
+
+.food-content p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.food-tips {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.tips-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.tips-content h2 {
+    color: var(--dark);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.tips-content>div:first-child>p:last-child {
+    color: var(--text);
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tips-list>div {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--border);
+}
+
+.tips-list span {
+    color: var(--secondary);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.tips-list p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* ---------- CONTACT PAGE ---------- */
+
+.contact-section {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 70px;
+}
+
+.contact-info h2 {
+    color: var(--dark);
+}
